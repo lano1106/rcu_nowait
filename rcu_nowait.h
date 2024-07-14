@@ -9,7 +9,7 @@
  * update the protected data, a pointer is replaced atomically.
  *
  * In parallel to that, old data incarnations are tolerated during a short
- * period of time (grace period) to allow consumers thread to finish referring
+ * period of time (grace period) to allow consumer threads to finish referring
  * to them before the publishing thread dispose them. This imply that the
  * publishing has to wait in order to offer a nowait structure to reading
  * threads. This is the type of compromise that cannot be done in my
