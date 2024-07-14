@@ -73,8 +73,10 @@ private:
  *
  * BUFSZ requirements:
  * - It has to be at least 'maximum number of concurrent reading threads' + 2 (or
- *   more but the smallest needed size is best). To simplify pointer arithmetic,
- * - BUFSZ must also be a power of 2.
+ *   more but the smallest needed size is best).
+ *   (to handle the worse case scenario where each consumer has a reference on
+ *    a different copy all at once except on the head)
+ * - BUFSZ must also be a power of 2, to simplify pointer arithmetic.
  */
 template <class T, size_t BUFSZ>
 class RcuDataNoWait
