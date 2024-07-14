@@ -2,6 +2,7 @@
 #define RCU_NOWAIT_H_
 /*
  * RCU no wait
+ * https://github.com/lano1106/rcu_nowait
  *
  * Small abstraction to offer RCU like functionality minus the grace period.
  * Unless I misunderstood how RCU works, when a publishing thread is ready to
